@@ -3,7 +3,13 @@ package principal;
 public class ComprobarDireccionesModular {
 
 	public static void main(String[] args) {
-		String emails = "aaa@gmail.com,bbb@tel.es,ccc@gmail.es,ddd@gmail.com,abc@hotmail.com";
+		String emails = """
+				aaa@gmail.com,\
+				bbb@tel.es,\
+				ccc@gmail.es,\
+				ddd@gmail.com,\
+				abc@hotmail.com\
+				""""
 		// indicar cuantas direcciones hay de cada dominio
 
 		int contEs = 0; int conCom = 0; //Declrar y iniciar los variables que queremos saber.
