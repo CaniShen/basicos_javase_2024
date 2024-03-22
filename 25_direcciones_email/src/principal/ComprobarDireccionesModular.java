@@ -9,7 +9,7 @@ public class ComprobarDireccionesModular {
 				ccc@gmail.es,\
 				ddd@gmail.com,\
 				abc@hotmail.com\
-				"""
+				""";
 		// indicar cuantas direcciones hay de cada dominio
 
 		int contEs = 0; int conCom = 0; //Declrar y iniciar los variables que queremos saber.
