@@ -19,7 +19,7 @@ public class Ejercicio_1_MuestraSeisNumeros_VersionProfe {
 		}while(totales<6);
 		Arrays.sort(generados);//ordena array de menor a mayor
 		for(int n:generados) {
-			System.out.print(n+",");
+			System.out.println("["+n+"]");
 		}
 	}
 	static boolean repetido(int[] numeros, int num, int totales) { //no choque si se llama los nombres si se llaman iguales. ya que son los variables dentro de ese metodo,auqnue se llaman iguales.
