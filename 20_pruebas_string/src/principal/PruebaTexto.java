@@ -34,8 +34,7 @@ public class PruebaTexto {
 			System.out.println("Distintos");
 		}
 		
-		
-		
+	
 
 	}
 }
