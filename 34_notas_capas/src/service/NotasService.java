@@ -1,4 +1,4 @@
-package principal;
+package service;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ public class NotasService {
 
 	}
 
-	public double media(ArrayList<Double> notas) {
+	public double media() {
 		double media = 0;
 		for (Double n : notas) {
 			media += n;
@@ -46,8 +46,14 @@ public class NotasService {
 		return menor;
 	}
 
-	public double[] obtenerNotas() {
-		return notas.stream().mapToDouble(i -> i).toArray();
+	public Double[] obtenerNotas() {
+/*	double []todas=new double[notas.size()];
+//		for(int i=0;i<notas.size();i++) {
+//			todas[i]=notas.get(i);
+		}
+//		return todas;*/
+//		return notas.stream().mapToDouble(i -> i).toArray();
+		return notas.toArray(new Double[0]);
 	}
 
 }
