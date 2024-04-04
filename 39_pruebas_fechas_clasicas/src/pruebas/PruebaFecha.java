@@ -19,9 +19,10 @@ public class PruebaFecha {
 		Date f2=cal.getTime();
 		System.out.println(f2);
 		//Fecha a partir de un String
-		String fecha="4/10/1999";
-		SimpleDateFormat format=new SimpleDateFormat("dd/mm/yyyy");
+		String fecha="04/10/1999";
+		SimpleDateFormat format=new SimpleDateFormat("dd/MM/yyyy");
 		Date f3=format.parse(fecha);
+		System.out.println(f3);
 		
 	}
 
