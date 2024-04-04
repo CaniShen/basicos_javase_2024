@@ -1,5 +1,5 @@
 package principal;
-
+import static java.lang.Math.*;
 public class SumaEntreNumeros {
 
 	public static void main(String[] args) {

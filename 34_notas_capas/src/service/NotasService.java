@@ -28,7 +28,7 @@ public class NotasService {
 	public double max() {
 		Double mayor = notas.get(0);
 		for (Double n : notas) {
-			if (n > mayor) {
+			if (n>mayor) {
 				mayor = n;
 			}
 		}
