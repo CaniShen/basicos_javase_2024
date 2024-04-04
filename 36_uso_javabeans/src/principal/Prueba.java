@@ -13,7 +13,8 @@ public class Prueba {
 	}
 }
 		//deberes :
-//		Realizar un programa para la gestión de empleados de una empresa. Un empleado se caracteriza por un nombre,un email, edad y tiene asociado un código de empleado.
+//		Realizar un programa para la gestión de empleados de una empresa. 
+//		Un empleado se caracteriza por un nombre,un email, edad y tiene asociado un código de empleado.
 //		al iniciar el programa, aparecerá el siguiente menú:
 //		1.- Nuevo empleado
 //		2.- Buscar empleado
