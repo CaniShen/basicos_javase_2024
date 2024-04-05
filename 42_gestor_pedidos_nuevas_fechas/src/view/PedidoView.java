@@ -56,7 +56,7 @@ public class PedidoView {
 
 	static void nuevoPedido() throws ParseException {
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		PedidoService service = new PedidoService();
 
 		System.out.println("Producto: ");
@@ -64,7 +64,7 @@ public class PedidoView {
 		System.out.println("Unidades");
 		int unidades = Integer.parseInt(sc.nextLine());
 		System.out.println("Fecha pedido(dia/mes/año):");
-		LocalDate fecha = LocalDate.parse(sc.nextLine());
+		LocalDate fecha = LocalDate.parse(sc.nextLine(),sdf);
 		Pedido p = new Pedido(producto, unidades, fecha);
 		service.nuevoPedido(p);
 

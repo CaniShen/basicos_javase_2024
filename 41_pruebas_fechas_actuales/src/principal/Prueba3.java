@@ -41,3 +41,4 @@ public class Prueba3 {
 //3: Se solicitan dos fechas, y se muestran los pedidos realizados
 //en ese rango de fechas 
 //4: Se solicita una fecha y nos muestra el pedido más cercano a dicha fecha
+//HACER EN EL MISMO PROYECTO NUMERO 42, LOS METODOS
