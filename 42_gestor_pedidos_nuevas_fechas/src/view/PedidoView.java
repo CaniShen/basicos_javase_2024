@@ -2,6 +2,8 @@ package view;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -62,7 +64,7 @@ public class PedidoView {
 		System.out.println("Unidades");
 		int unidades = Integer.parseInt(sc.nextLine());
 		System.out.println("Fecha pedido(dia/mes/año):");
-		Date fecha = sdf.parse(sc.nextLine());
+		LocalDate fecha = LocalDate.parse(sc.nextLine());
 		Pedido p = new Pedido(producto, unidades, fecha);
 		service.nuevoPedido(p);
 
@@ -70,7 +72,7 @@ public class PedidoView {
 
 	static void pedidoMasReciente() {
 		Pedido p = service.pedidoMasReciente();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		DateTimeFormatter sdf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.println("Producto: " + p.getProducto() + " ");
 		System.out.println("Unidades: " + p.getUnidades() + " ");
 		System.out.println("Fecha pedido: " + sdf.format(p.getFechaPedido()) + " ");
@@ -79,11 +81,11 @@ public class PedidoView {
 
 	static void pedidoEntreFechas() throws ParseException {
 		Scanner sc = new Scanner(System.in);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.println("Fecha inicio (dia/mes/año):");
-		Date fecha1 = sdf.parse(sc.nextLine());
+		LocalDate fecha1 = LocalDate.parse(sc.nextLine(),sdf);
 		System.out.println("Fecha límite (día/mes/año):");
-		Date fecha2=sdf.parse(sc.nextLine());	
+		LocalDate fecha2=LocalDate.parse(sc.nextLine(),sdf);	
 		ArrayList<Pedido> pedidosEncontrados=service.pedidoEntreFechas(fecha1, fecha2);
 		for (Pedido p : pedidosEncontrados) {
 			System.out.print("Producto: " + p.getProducto() + " ");

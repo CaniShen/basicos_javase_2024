@@ -1,9 +1,8 @@
 package service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 
 import model.Pedido;
 
@@ -27,10 +26,9 @@ public class PedidoService {
 	
 	public Pedido pedidoMasReciente() {
 		Pedido pAxu=null;   ///=new Pedido();
-		Date fMax=new Date(0);// 1/1/1970
-		Date fechaReciente;
+		LocalDate fMax=LocalDate.of(0, 1, 1); // 1/1/1970
 		for(Pedido p:pedidos) {
-			if (p.getFechaPedido().after(fMax)) {
+			if (p.getFechaPedido().isAfter(fMax)) {
 				fMax=p.getFechaPedido();
 				 pAxu= p;
 			}
@@ -41,7 +39,7 @@ public class PedidoService {
 										
 		
 	
-	public ArrayList<Pedido> pedidoEntreFechas (Date f1, Date f2) {
+	public ArrayList<Pedido> pedidoEntreFechas (LocalDate f1, LocalDate f2) {
 		ArrayList<Pedido> aux=new ArrayList<Pedido>();
 		for(Pedido p:pedidos) {
 			//si fecha del pedido es posterior o igual a f1 y anterior o igual a f2. se incluye 

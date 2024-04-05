@@ -1,12 +1,12 @@
 package model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Pedido {
 	private String producto;
 	private int unidades;
-	public Date fechaPedido;
-	public Pedido(String producto, int unidades, Date fecha) {
+	public LocalDate fechaPedido;
+	public Pedido(String producto, int unidades, LocalDate fecha) {
 		super();
 		this.producto = producto;
 		this.unidades = unidades;
@@ -29,10 +29,10 @@ public class Pedido {
 	public void setUnidades(int unidades) {
 		this.unidades = unidades;
 	}
-	public Date getFechaPedido() {
+	public LocalDate getFechaPedido() {
 		return fechaPedido;
 	}
-	public void setFechaPedido(Date fechaPedido) {
+	public void setFechaPedido(LocalDate fechaPedido) {
 		this.fechaPedido = fechaPedido;
 	}
 	
