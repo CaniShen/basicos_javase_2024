@@ -14,6 +14,7 @@ public class Prueba3 {
 		System.out.println("Meses: "+p.getMonths());
 		System.out.println("Días: "+p.getDays());
 		long dias1=ChronoUnit.DAYS.between(f1, f2);
+			
 		System.out.println("Total días primer periodo: "+ dias1);
 		
 		//////

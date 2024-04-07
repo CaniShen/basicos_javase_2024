@@ -34,6 +34,9 @@ public class PedidoView {
 				pedidoEntreFechas();
 				break;
 			case 4:
+				pedidoCercaFecha();
+				break;
+			case 5:
 				System.out.println("Adios!");
 				break;
 			default:
@@ -41,16 +44,19 @@ public class PedidoView {
 
 			}
 
-		} while (opcion != 4);// mienstras no seleccione 4)
+		} while (opcion != 5);// mienstras no seleccione 5)
 
 	}
+
+
 
 	static void presentarMenu() {
 		System.out.println("""
 				1.- Nuevo pedido
 				2.- Pedido más reciente
 				3.- Pedidos entre dos fechas
-				4.- Salir
+				4.- Pedido cercano a una fecha
+				5.- Salir
 
 				""");
 
@@ -95,4 +101,16 @@ public class PedidoView {
 			System.out.println("Fecha pedido: " + sdf.format(p.getFechaPedido()) + " ");
 		}
 	}
+	static void pedidoCercaFecha() {
+		Scanner sc = new Scanner(System.in);
+		DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		System.out.println("Introduce una fecha (dia/mes/año):");
+		LocalDate fecha1 = LocalDate.parse(sc.nextLine(),sdf);
+		Pedido p = service.muestraPedidoCercaFecha(fecha1);
+		System.out.println("El pedido más cerca de esta fecha es: ");
+		System.out.print("Producto: " + p.getProducto() + " ");
+		System.out.println("Fecha pedido: " + sdf.format(p.getFechaPedido()) + " ");
+		
+		
+}
 }

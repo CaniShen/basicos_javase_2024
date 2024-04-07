@@ -28,6 +28,8 @@ public class PedidoService {
 		Pedido pAxu=null;   ///=new Pedido();
 		LocalDate fMax=LocalDate.of(0, 1, 1); // 1/1/1970
 		for(Pedido p:pedidos) {
+			//si encontramos pedido con fecha más reciente que fMax
+			//actualizamos fMax y pAux
 			if (p.getFechaPedido().isAfter(fMax)) {
 				fMax=p.getFechaPedido();
 				 pAxu= p;

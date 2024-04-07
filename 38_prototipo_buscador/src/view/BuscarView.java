@@ -26,7 +26,8 @@ public class BuscarView {
 	}
 
 }
-//Desarrollar un programa para gestión de ciudades. Una ciudad se caracteriza por nombre, habitantes y pais.
+
+//TODO Desarrollar un programa para gestión de ciudades. Una ciudad se caracteriza por nombre, habitantes y pais.
 //
 //El programa mostrará el siguiente menú: 
 //
