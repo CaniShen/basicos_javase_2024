@@ -57,19 +57,54 @@ public class PedidoService {
 	}
 
 	public Pedido muestraPedidoCercaFecha(LocalDate f3) {
-		Pedido pAxu = null; //Se crea un producto AUXILIAR para ayudarnos a hacer la comparación, guardando en esta variable el menor tiempo a una fecha dada ...
+//		Pedido pAux=new Pedido();
+//		pAux.setFechaPedido(LocalDate.of(1, 1, 1));
+//		//comparamos la diferencia de días entre la fecha de cada pedido y la 
+//		//parámetro, con la dierencia de días entre la fecha auxiliar y la parámetro
+//		//si la del pedido es inferior, actualizamos la viariable pedido auxiliar
+//		for(Pedido p:pedidos) {
+//			if(Math.abs(ChronoUnit.DAYS.between(p.getFechaPedido(), f3))<
+//					Math.abs(ChronoUnit.DAYS.between(pAux.getFechaPedido(),f3))) {
+//				pAux=p;
+//				
+//			}
+//			
+//		}
+//		 return pAux;
+		Pedido pAxu = null; //Se crea un producto AUXILIAR para ayudarnos a hacer la comparación, 
+							//guardando en este variable el menor tiempo a una fecha dada ...
 		for (Pedido p : pedidos) {//recorremos los pedidos guardados.
-			long diaPedido = ChronoUnit.DAYS.between(f3, p.getFechaPedido());////iniciando los dias que tienen entre la fecha introducido del usuario hasta la fecha del pedido.		
+			long diaPedido = Math.abs(ChronoUnit.DAYS.between(f3, p.getFechaPedido()));//iniciando los dias que tienen entre la fecha 
+																		//introducido del usuario hasta la fecha del pedido.		
 			if(pAxu == null) {///si el producto axuliar es nulo.
 				pAxu=p;			//lo inicializamos, es decir, es igual al PRIMER pedido de HashSet.
 			}
-			long diaAxu =ChronoUnit.DAYS.between(f3, pAxu.getFechaPedido());/////iniciando los dias que tienen entre la fecha introducido del usuario hasta la fecha del pedido auxiliar.
+			long diaAxu =Math.abs(ChronoUnit.DAYS.between(f3, pAxu.getFechaPedido()));//iniciando los dias que tienen entre la fecha introducido del usuario 
+																			//hasta la fecha del pedido auxiliar.
 
-			if(diaAxu<diaPedido) {// si el numero de dias del pedido es menor al pedido auxiliar , entonces modificamos el pedido auxiliar con el pedido actual.
+			if(diaAxu>diaPedido) {// si el numero de dias del pedido es menor al pedido auxiliar , entonces modificamos el pedido auxiliar con el pedido actual.
 				pAxu=p;
 			}
 		}
 		return pAxu;
+//		Pedido pAxu = null; // Se crea un producto AUXILIAR para ayudarnos a hacer la comparación,
+//		// guardando en este variable el menor tiempo a una fecha dada ...
+//		for (Pedido p : pedidos) {// recorremos los pedidos guardados.
+//			long diaPedido = Math.abs(ChronoUnit.DAYS.between(f3, p.getFechaPedido()));// iniciando los dias que tienen
+//																				// entre la fecha
+//				pAxu = p; 
+//			
+//			long diaAxu = Math.abs(ChronoUnit.DAYS.between(f3, pAxu.getFechaPedido()));// iniciando los dias que tienen
+//																						// entre la fecha introducido
+//																						// del usuario
+//			// hasta la fecha del pedido auxiliar.
+//
+//			if (diaAxu > diaPedido) {// si el numero de dias del pedido es menor al pedido auxiliar , entonces
+//										// modificamos el pedido auxiliar con el pedido actual.
+//				pAxu = p;
+//			}
+//		}
+//		return pAxu;
 
 	}
 	

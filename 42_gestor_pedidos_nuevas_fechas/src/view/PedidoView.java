@@ -5,8 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import model.Pedido;
 import service.PedidoService;
@@ -16,34 +15,39 @@ public class PedidoView {
 
 	public static void main(String[] args) throws ParseException {
 		Scanner sc = new Scanner(System.in);
-		int opcion;
+		int opcion=0;
 		do {
 			// presentar menu
 			// leer opción y comprobar opción elegida
 			presentarMenu();
-			opcion = sc.nextInt();
-			switch (opcion) {
-			case 1:
-				nuevoPedido();
-				break;
-			case 2:
-				pedidoMasReciente();
-				
-				break;
-			case 3:
-				pedidoEntreFechas();
-				break;
-			case 4:
-				System.out.println("Adios!");
-				break;
-			default:
-				System.out.println("Opción no válida");
-
+			
+			try {
+				opcion=Integer.parseInt(sc.nextLine());	//opcion = sc.nextInt();//trata de hacer siempre con parseInt(sc.nextLine())
+				switch (opcion) {
+				case 1:
+					nuevoPedido();
+					break;
+				case 2:
+					pedidoMasReciente();
+					
+					break;
+				case 3:
+					pedidoEntreFechas();
+					break;
+				case 4:
+					System.out.println("Adios!");
+					break;
+				default:
+					System.out.println("Opción no válida");
+				}
+			}//end try
+			catch(NumberFormatException ex){
+				System.out.println("debe ser un valor numerico");
 			}
 
 		} while (opcion != 4);// mienstras no seleccione 4)
-
-	}
+				
+}
 
 	static void presentarMenu() {
 		System.out.println("""
@@ -56,25 +60,29 @@ public class PedidoView {
 
 	}
 
-	static void nuevoPedido() throws ParseException {
+	static void nuevoPedido() {
 		Scanner sc = new Scanner(System.in);
 		DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		
-
-		System.out.println("Producto: ");
-		String producto = sc.nextLine();
-		System.out.println("Unidades");
-		int unidades=Integer.parseInt(sc.nextLine());
-		System.out.println("Fecha pedido(dia/mes/año):");
-		LocalDate fecha = LocalDate.parse(sc.nextLine(),sdf);
-		Pedido p = new Pedido(producto, unidades, fecha);
-		service.nuevoPedido(p);
+		
+			System.out.println("Producto: ");
+			String producto = sc.nextLine();
+			System.out.println("Unidades");
+			int unidades=Integer.parseInt(sc.nextLine());
+			System.out.println("Fecha pedido(dia/mes/año):");
+			LocalDate fecha = LocalDate.parse(sc.nextLine(),sdf);
+			Pedido p = new Pedido(producto, unidades, fecha);
+			service.nuevoPedido(p);
+		
+		
+		
 
 	}
+	
 
 	static void pedidoMasReciente() {
 		Pedido p = service.pedidoMasReciente();
-		DateTimeFormatter sdf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		System.out.print("Producto: " + p.getProducto() + " ");
 		System.out.print("Unidades: " + p.getUnidades() + " ");
 		System.out.println("Fecha pedido: " + p.getFechaPedido().format(sdf) + " ");
