@@ -1,8 +1,7 @@
 package model;
 
 public class Empleado {
-	//TODO Hazlo en fichero 	//cada empleado se graba en una línea:
-	//codigo,nombre,emial,edad
+	//TODO Programa para manejar pedidos. Un pedido se caracteriza por producto,unidades,fechaPedido.
 	//atributo
 	private int codigo;
 	private String nombre;
