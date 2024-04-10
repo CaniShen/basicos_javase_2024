@@ -41,7 +41,7 @@ public class PedidoView {
 					System.out.println("Opción no válida");
 				}
 			}//end try
-			catch(NumberFormatException ex){
+			catch(NumberFormatException ex){//no puede introducir un texto que no sea numérico.
 				System.out.println("debe ser un valor numerico");
 			}
 

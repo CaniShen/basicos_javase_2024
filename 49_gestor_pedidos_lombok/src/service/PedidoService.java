@@ -35,6 +35,10 @@ public class PedidoService {
 		}
 			
 	}
+	public void nuevoPedido(String producto, int unidades, LocalDate fechaPedido) {
+		Pedido p=new Pedido(producto,unidades,fechaPedido);
+		nuevoPedido(p);
+	}
 	
 	public Pedido pedidoMasReciente() {
 		String linea;
