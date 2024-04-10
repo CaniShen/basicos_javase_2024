@@ -7,6 +7,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/manana/eclipse_work_place/libreria_externas/lombok.jar"/>
+	<classpathentry kind="lib" path="C:/Users/manana/eclipse_work_place/libreria_externas/lector.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
