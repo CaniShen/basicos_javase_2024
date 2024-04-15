@@ -41,7 +41,8 @@ public class PedidoService {
 		LocalDate fMax = LocalDate.of(0, 1, 1);// 1/1/1970
 		Pedido pAxu = null;
 
-		try (FileReader fr = new FileReader(fichero); BufferedReader bf = new BufferedReader(fr);) {
+		try (FileReader fr = new FileReader(fichero); 
+				BufferedReader bf = new BufferedReader(fr);) {
 
 			while ((linea = bf.readLine()) != null) {
 				Pedido p=Util.convertirCadenaAPedido(linea);

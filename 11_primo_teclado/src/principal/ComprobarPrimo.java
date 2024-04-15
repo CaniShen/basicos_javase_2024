@@ -21,5 +21,7 @@ public class ComprobarPrimo {
 		 
 	}
 	System.out.println("El número "+num+" es primo?"+esPrimo);
+	
 }
+	 
 }

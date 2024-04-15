@@ -11,6 +11,7 @@ public class EmpleadosMenu {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		service.cargarEmpleados();
 		int opcion;
 		do {
 			// presentar menu
@@ -23,6 +24,7 @@ public class EmpleadosMenu {
 				break;
 			case 2:
 				buscaEmpleado();
+				break;
 			case 3:
 				eliminarEmpleado();
 				break;

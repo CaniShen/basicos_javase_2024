@@ -107,7 +107,8 @@ public class NotasService {
 
 		ArrayList<Double> aux = new ArrayList<Double>();
 		String linea;
-		try (FileReader fr = new FileReader(fichero); BufferedReader bf = new BufferedReader(fr);) {
+		try (FileReader fr = new FileReader(fichero); 
+				BufferedReader bf = new BufferedReader(fr);) {
 			// mientras haya una nota que leer
 			while ((linea = bf.readLine()) != null) {
 
