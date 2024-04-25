@@ -1,7 +1,10 @@
+
+
+
 package principal;
 
 public class VariablesTipos {
-	static int r; // vatriables de tipo atributo. Fuera de MAIN
+	static int r; // variable de tipo atributo. Fuera de MAIN
 	
 	public static void main(String[] args) {
 		//variables locales no tienen valores inicial

@@ -22,7 +22,7 @@ public class EmpleadosService {
 
 	}
 
-	HashMap<Integer, Empleado> empleados = new HashMap<>(); // atributo de EmmpleadoService
+	HashMap<Integer, Empleado> empleados = new HashMap<>(); // atributo de EmpleadoService
 	// ya no guarda en String sino al objeto
 
 	public void cargarEmpleados() { // método para cargar los empleados guardados en el fichero,
