@@ -1,1 +1,7 @@
-/.metadata/
+.project
+.classpath
+.settings
+.factorypath
+.idea
+target/
+#comment
